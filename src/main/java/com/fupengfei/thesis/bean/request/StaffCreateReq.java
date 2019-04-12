@@ -1,4 +1,4 @@
-package bean.request;
+package com.fupengfei.thesis.bean.request;
 
 import com.fupengfei.thesis.entity.enums.Gender;
 import lombok.Getter;
@@ -18,4 +18,5 @@ public class StaffCreateReq implements Serializable {
     private String name;
     private Integer age;
     private Gender gender;
+    private String email;
 }

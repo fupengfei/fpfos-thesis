@@ -1,12 +1,17 @@
+debug: false
 server:
   port: 9000
 spring:
+  http:
+    converters:
+      preferred-json-mapper: gson
   jpa:
     show-sql: true
+    open-in-view: true
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://fpfos.com/fpfos-thesis?characterEncoding=utf-8
+    url: jdbc:mysql://fpfos.com:3306/fpfos-thesis?characterEncoding=utf-8
     username: root
     password: admin123
     driver-class-name: com.mysql.jdbc.Driver
@@ -14,3 +19,4 @@ spring:
     database: 0
     host: fpfos.com
     port: 6379
+

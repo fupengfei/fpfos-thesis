@@ -10,5 +10,5 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface AbstractJpaRepository<T extends AbstractEntity, ID> extends JpaRepository<T, ID> {
 
-    T findByPrimaryCode(String primaryCode);
+//    T findByPrimaryCode(String primaryCode);
 }
