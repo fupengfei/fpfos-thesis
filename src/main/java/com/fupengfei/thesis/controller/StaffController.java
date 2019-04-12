@@ -1,10 +1,16 @@
 package com.fupengfei.thesis.controller;
 
+import bean.request.StaffCreateReq;
+import com.fupengfei.thesis.entity.Staff;
+import com.fupengfei.thesis.repository.jpa.StaffJpaRepository;
 import com.fupengfei.thesis.repository.redis.StaffRedisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
 
 /**
  * @Description: IntelliJ IDEA: com.fupengfei.thesis.controller.ApiController
@@ -21,19 +27,17 @@ public class StaffController {
     private StaffRedisRepository staffRedisRepository;
 
 
-    @GetMapping("hello")
-    public String hello() {
+    @PostMapping("save")
+    public String save(@RequestBody StaffCreateReq reqData) {
 
-        PdUser user = new PdUser();
-//        user.setPrimaryCode(Utils.UUID());
-        user.setNickname("小恩");
-        user.setMobile("15721093932");
-        user.setCreateDate(System.currentTimeMillis());
+        Staff staff = new Staff();
+        staff.setPrimaryCode(UUID.randomUUID().toString().replace("-", ""));
+        staff.setRealName(reqData.getName());
+        staff.setAge(reqData.getAge());
+        staff.setGender(reqData.getGender());
 
-        userJpaRepository.save(user);
-
-        userRedisRepository.save(user);
-
+        staffJpaRepository.save(staff);
+        staffRedisRepository.save(staff);
         return "ok";
     }
 

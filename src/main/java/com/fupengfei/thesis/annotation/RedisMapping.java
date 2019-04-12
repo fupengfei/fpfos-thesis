@@ -1,4 +1,4 @@
-package com.fupengfei.thesis.entity.core;
+package com.fupengfei.thesis.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

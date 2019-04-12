@@ -1,4 +1,10 @@
+server:
+  port: 9000
 spring:
+  jpa:
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     url: jdbc:mysql://fpfos.com/fpfos-thesis?characterEncoding=utf-8
     username: root

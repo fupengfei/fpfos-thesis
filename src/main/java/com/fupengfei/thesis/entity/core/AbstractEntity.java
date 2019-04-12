@@ -1,5 +1,6 @@
 package com.fupengfei.thesis.entity.core;
 
+import com.fupengfei.thesis.annotation.RedisMapping;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -19,7 +20,8 @@ import java.time.LocalDateTime;
 public abstract class AbstractEntity extends JsonBaseObject {
 
     @RedisMapping
-    @Id
+    @Id // spring data rdis id
+    @javax.persistence.Id // spring data jpa id
     @Setter
     @Column(name = "primary_code", updatable = false, nullable = false, unique = true)
     private String primaryCode;
@@ -29,14 +31,14 @@ public abstract class AbstractEntity extends JsonBaseObject {
     private Boolean isDel;
 
     @Setter
-    @Column(name = "create_primary_code", updatable = false, nullable = false )
+    @Column(name = "create_primary_code", updatable = false, nullable = false)
     private String createPrimaryCode;
     @Setter
     @Column(name = "created_name", updatable = false, nullable = false)
     private String createdName;
     @RedisMapping
     @Setter
-    @Column(name = "created_time",  updatable = false, nullable = false)
+    @Column(name = "created_time", updatable = false, nullable = false)
     private LocalDateTime createdTime;
 
     @RedisMapping

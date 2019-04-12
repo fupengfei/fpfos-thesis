@@ -1,7 +1,8 @@
 package com.fupengfei.thesis.configure;
 
-import com.fpfos.common.core.entity.core.RedisMapping;
-import org.apache.commons.lang.ArrayUtils;
+import com.fupengfei.thesis.annotation.RedisMapping;
+import org.apache.commons.lang3.ArrayUtils;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.redis.core.convert.*;
 import org.springframework.data.redis.core.mapping.RedisMappingContext;
 
@@ -35,7 +36,7 @@ public class MyMappingRedisConverter extends MappingRedisConverter {
             Field[] superFields = clazz.getSuperclass().getDeclaredFields();
             Field[] childFields = clazz.getDeclaredFields();
 
-            Field[] fields = (Field[]) ArrayUtils.addAll(superFields, childFields);
+            Field[] fields = ArrayUtils.addAll(superFields, childFields);
 
             for (Field field : fields) {
 

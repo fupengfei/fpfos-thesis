@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by Fu Pengfei on 2018/8/14.
  */
-
 @Repository
-interface StaffJpaRepository extends AbstractJpaRepository<Staff, String> {
+public interface StaffJpaRepository extends AbstractJpaRepository<Staff, String> {
 }

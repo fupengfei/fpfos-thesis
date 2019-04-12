@@ -1,15 +1,14 @@
 package com.fupengfei.thesis.entity;
 
 import com.fupengfei.thesis.entity.core.AbstractEntity;
+import com.fupengfei.thesis.annotation.RedisMapping;
 import com.fupengfei.thesis.entity.enums.Gender;
 import com.fupengfei.thesis.entity.enums.Postion;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.redis.core.RedisHash;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @Description: IntelliJ IDEA: com.fupengfei.thesis.entity.core.Staff
@@ -23,24 +22,27 @@ import javax.persistence.Table;
 @Entity
 public class Staff extends AbstractEntity {
 
-    @Column(name = "staff_name", nullable = false)
-    private String staffName;
+    @Column(name = "real_name", nullable = false)
+    @RedisMapping
+    private String realName;
 
-    @Column(name = "staff_name", nullable = false)
-    private Integer staffAge;
+    @Column(name = "age", nullable = false)
+    private Integer age;
 
-    @Column(name = "staff_name", nullable = false)
+    @Column(name = "gender", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "staff_name", nullable = false)
+    @Column(name = "selfie", nullable = false)
     private String selfie;
 
-    @Column(name = "staff_name", nullable = false)
+    @Column(name = "mobile", nullable = false)
     private String mobile;
 
-    @Column(name = "staff_name", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "staff_name", nullable = false)
+    @Column(name = "postion", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Postion postion;
 }
