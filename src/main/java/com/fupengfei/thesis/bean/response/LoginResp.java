@@ -1,5 +1,6 @@
-package com.fupengfei.thesis.bean.core;
+package com.fupengfei.thesis.bean.response;
 
+import com.fupengfei.thesis.bean.core.AbstractResponseBean;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public abstract class AbstractRequestBean extends VoJsonBasic{
+public class LoginResp extends AbstractResponseBean {
 
     private String token;
 }
