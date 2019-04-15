@@ -32,7 +32,7 @@ public class ApiExceptionHandler {
 
         response.setCode(apiex.getErrCode());
         response.setErrMsg(apiex.getErrMsg());
-        response.setTimestamp(String.valueOf(Calendar.getInstance().getTimeInMillis()));
+        response.setTimestamp(Calendar.getInstance().getTimeInMillis());
 
         log.info("Exception message:\n{}", response.toString());
 

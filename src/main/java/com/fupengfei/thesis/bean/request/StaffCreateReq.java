@@ -1,10 +1,12 @@
 package com.fupengfei.thesis.bean.request;
 
+import com.fupengfei.thesis.bean.core.AbstractRequestBean;
 import com.fupengfei.thesis.entity.enums.Gender;
+import com.fupengfei.thesis.entity.enums.Postion;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @author Fu Pengfei
@@ -13,10 +15,33 @@ import java.io.Serializable;
  */
 @Setter
 @Getter
-public class StaffCreateReq implements Serializable {
+public class StaffCreateReq extends AbstractRequestBean {
 
-    private String name;
+    private String realName;
+
     private Integer age;
+
     private Gender gender;
+
+    private String selfie;
+
+    private String mobile;
+
     private String email;
+
+    private Postion postion;
+
+    private String staffAddress;
+
+    private String staffIDCard;
+
+    private String staffIDCardPhoto;
+
+    private String staffIDCardPhotoBack;
+
+    private String emergencyContact;
+
+    private String emergencyContactMobile;
+
+    private BigDecimal salary;
 }

@@ -1,5 +1,6 @@
 package com.fupengfei.thesis.bean.core;
 
+import com.fupengfei.thesis.entity.core.JsonBaseObject;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public abstract class AbstractRequestBean extends VoJsonBasic{
+public abstract class AbstractRequestBean extends JsonBaseObject {
 
-    private String token;
+
 }

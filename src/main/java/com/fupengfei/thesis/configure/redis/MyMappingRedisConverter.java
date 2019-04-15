@@ -1,6 +1,6 @@
-package com.fupengfei.thesis.configure;
+package com.fupengfei.thesis.configure.redis;
 
-import com.fupengfei.thesis.annotation.RedisMapping;
+import com.fupengfei.thesis.configure.annotation.RedisMapping;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.data.redis.core.convert.*;
 import org.springframework.data.redis.core.mapping.RedisMappingContext;

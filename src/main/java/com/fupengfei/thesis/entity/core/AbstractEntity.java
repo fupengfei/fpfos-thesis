@@ -1,6 +1,6 @@
 package com.fupengfei.thesis.entity.core;
 
-import com.fupengfei.thesis.annotation.RedisMapping;
+import com.fupengfei.thesis.configure.annotation.RedisMapping;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class AbstractEntity extends PoJsonBasic implements Serializable {
+public abstract class AbstractEntity extends JsonBaseObject implements Serializable {
 
     @RedisMapping
     @Id // spring data rdis id

@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @Author: fpfos
  * @Date: 2019-04-08 23:12
  */
-public abstract class PoJsonBasic implements Serializable {
+public abstract class JsonBaseObject implements Serializable {
 
     public static Gson GSON = new Gson();
 

@@ -9,8 +9,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface StaffRedisRepository extends AbstractRedisRepository<Staff, String> {
+public interface StaffRedisRepository extends AbstractRedisRepository<Staff> {
 
-    void
 
 }

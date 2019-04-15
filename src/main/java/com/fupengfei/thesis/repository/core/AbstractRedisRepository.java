@@ -8,7 +8,8 @@ import org.springframework.data.repository.NoRepositoryBean;
  * Created by Fu Pengfei on 2018/8/2.
  */
 @NoRepositoryBean
-public interface AbstractRedisRepository<T extends AbstractEntity, ID> extends CrudRepository<T, ID> {
+public interface AbstractRedisRepository<T extends AbstractEntity> extends CrudRepository<T, String> {
 
+    T findByPrimaryCode(String primaryCode);
 
 }
